@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mmRouter组件</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <script  src="../../statics/lib/require.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="./avalon-get.scss">
+         
+    </head>
+    <body>
+        <h1>mmRouter综合实例一: avalon.get</h1>
+        <div class="contents" ms-controller="box">
+            <ul class="tb cl">
+                <li ms-repeat="tab.page" ms-class="a:tab.currpage===el.name">
+                  <a ms-href="el.url" ms-class-1="tbtxt1:el.name!=='tab1'" ms-class-2="tbtxt2:el.name==='tab1'">{{ el.title }}</a>
+                  <a ms-if="el.name!='tab1'" ms-click="tab_close(el.name)" href="javascript:;" class="tbclose">X</a>
+                </li>
+            </ul>
+            <div id="main" class="cl" style="margin:10px 5px 5px 10px;width:500px;height:300px">
+                <p>{{tab.content}}</p>
+            </div>
+            <div>
+                <a href="#!/tab1">显示tab1</a>
+                <a href="#!/tab2">显示tab2</a>
+                <a href="#!/tab3">显示tab3</a>
+                <a href="#!/tab4">显示tab4</a>
+            </div>
+        </div>
+        <script>
+        require(["./avalon-get"], function () {
+        });
+        </script>
+         
+    </body>
+</html>
